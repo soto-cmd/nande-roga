@@ -1,19 +1,3 @@
-const menuToggle = document.querySelector('.menu-toggle');
-const nav = document.querySelector('.main-nav');
-menuToggle.addEventListener('click', () => {
-  nav.classList.toggle('open');
-  menuToggle.setAttribute('aria-expanded', nav.classList.contains('open'));
-});
-
-document.querySelectorAll('.main-nav a').forEach(link => link.addEventListener('click', () => nav.classList.remove('open')));
-document.getElementById('year').textContent = new Date().getFullYear();
-
-document.getElementById('bookingForm').addEventListener('submit', (e) => {
-  e.preventDefault();
-  const name = document.getElementById('name').value.trim();
-  const checkin = document.getElementById('checkin').value;
-  const checkout = document.getElementById('checkout').value;
-  const guests = document.getElementById('guests').value;
-  const text = `Hola, soy ${name}. Quisiera consultar disponibilidad en Ñande Róga. Entrada: ${checkin}. Salida: ${checkout}. ${guests}.`;
-  window.open(`https://wa.me/595000000000?text=${encodeURIComponent(text)}`, '_blank', 'noopener');
-});
+const menuToggle=document.querySelector('.menu-toggle'),nav=document.querySelector('.main-nav');menuToggle?.addEventListener('click',()=>{nav.classList.toggle('open');menuToggle.setAttribute('aria-expanded',nav.classList.contains('open'));});document.querySelectorAll('.main-nav a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));document.getElementById('year').textContent=new Date().getFullYear();let siteWhatsapp='595000000000';
+(async()=>{const{createClient}=await import('https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm');const supabase=createClient('https://oxirewjzmnfnbwiugoac.supabase.co','sb_publishable_gkc-Cjh2ykNYvlf5JRf3NQ_UU2s73jC');const targets={hero:document.querySelector('.hero'),about:[document.querySelector('.photo-a'),document.querySelector('.photo-b')],room_yvoty:[document.querySelector('.room-one')],room_arami:[document.querySelector('.room-two')],room_jerovia:[document.querySelector('.room-three')],experience:[document.querySelector('.experience-band')],gallery:[...document.querySelectorAll('.gallery-grid .g')]};const[siteRes,mediaRes]=await Promise.all([supabase.from('nande_roga_site').select('*').eq('id',1).maybeSingle(),supabase.from('nande_roga_media').select('*').order('section').order('position')]);if(siteRes.data){const s=siteRes.data;siteWhatsapp=(s.whatsapp||siteWhatsapp).replace(/\D/g,'');const h1=document.querySelector('.hero h1'),hp=document.querySelector('.hero-content>p');if(h1)h1.textContent=s.hero_title;if(hp)hp.textContent=s.hero_text;const ps=[...document.querySelectorAll('.contact-list p')];if(ps[0])ps[0].innerHTML=`<strong>WhatsApp</strong><br>+${siteWhatsapp}`;if(ps[1])ps[1].innerHTML=`<strong>Ubicación</strong><br>${s.location}`;if(ps[2])ps[2].innerHTML=`<strong>Horario de atención</strong><br>${s.hours}`;document.querySelectorAll('a[href*="wa.me/"]').forEach(a=>a.href=`https://wa.me/${siteWhatsapp}?text=${encodeURIComponent('Hola, quisiera consultar disponibilidad en Ñande Róga')}`);}for(const item of mediaRes.data||[]){const url=supabase.storage.from('nande-roga').getPublicUrl(item.storage_path).data.publicUrl;if(item.section==='hero'){const st=document.createElement('style');st.textContent=`.hero:before{background-image:url("${url}")!important}`;document.head.appendChild(st);}else if(item.section==='experience'){const el=targets.experience[0];if(el)el.style.backgroundImage=`linear-gradient(rgba(62,50,34,.65),rgba(62,50,34,.65)),url("${url}")`;}else{const list=targets[item.section]||[];const el=list[item.position||0];if(el)el.style.backgroundImage=`url("${url}")`;}}})();
+document.getElementById('bookingForm')?.addEventListener('submit',e=>{e.preventDefault();const name=document.getElementById('name').value.trim(),checkin=document.getElementById('checkin').value,checkout=document.getElementById('checkout').value,guests=document.getElementById('guests').value,text=`Hola, soy ${name}. Quisiera consultar disponibilidad en Ñande Róga. Entrada: ${checkin}. Salida: ${checkout}. ${guests}.`;window.open(`https://wa.me/${siteWhatsapp}?text=${encodeURIComponent(text)}`,'_blank','noopener');});
