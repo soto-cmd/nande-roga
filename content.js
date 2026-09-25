@@ -1,10 +1,8 @@
 (async()=>{
-  const source=await fetch('./script.js',{cache:'no-store'}).then(r=>r.text());
-  const key=(source.match(/sb_publishable_[A-Za-z0-9_-]+/)||[])[0];
-  if(!key)return;
   const{createClient}=await import('https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm');
-  const supabase=createClient('https://oxirewjzmnfnbwiugoac.supabase.co',key);
-  const{data}=await supabase.from('nande_roga_site').select('content').eq('id',1).maybeSingle();
+  const supabase=createClient('https://oxirewjzmnfnbwiugoac.supabase.co','sb_publishable_gkc-Cjh2ykNYvlf5JRf3NQ_UU2s73jC');
+  const{data,error}=await supabase.from('nande_roga_site').select('content').eq('id',1).maybeSingle();
+  if(error)return;
   const c=data?.content||{};
   const set=(sel,v)=>{const el=document.querySelector(sel);if(el&&v)el.textContent=v};
   set('#nosotros .eyebrow',c.about_eyebrow);set('#nosotros h2',c.about_title);
