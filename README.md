@@ -9,5 +9,6 @@ El sitio está preparado para GitHub Pages.
 El contenido dinámico, las fotografías y los datos de contacto se gestionan desde el panel de administración conectado a Supabase.
 
 ## Identidad
-Nombre oficial: ÑandeRóga
-Eslogan: Nuestra Casa, Tu descanso
+Nombre oficial: ÑandeRóga  
+Eslogan: Nuestra Casa, Tu descanso  
+Logo: archivo oficial proporcionado por el propietario, sin rediseño.
