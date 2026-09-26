@@ -1,22 +1,13 @@
-# Ñande Róga - Posada
+# ÑandeRóga
 
-Sitio web estático responsive, preparado para publicar gratuitamente con GitHub Pages.
+Sitio web de la posada ÑandeRóga, Santa María de Fe, Misiones, Paraguay.
 
-## Publicación en GitHub Pages
-1. Ir a **Settings → Pages**.
-2. En **Build and deployment**, elegir **Deploy from a branch**.
-3. Seleccionar la rama `main` y la carpeta `/ (root)`.
-4. Guardar.
+## Publicación
+El sitio está preparado para GitHub Pages.
 
-La URL esperada será:
+## Administración
+El contenido dinámico, las fotografías y los datos de contacto se gestionan desde el panel de administración conectado a Supabase.
 
-`https://soto-cmd.github.io/nande-roga/`
-
-## Pendiente de personalización
-- Reemplazar `595000000000` por el número real de WhatsApp.
-- Confirmar dirección y horarios.
-- Reemplazar fotografías ilustrativas por fotos reales de la posada cuando estén disponibles.
-- Ajustar textos de habitaciones y servicios según la oferta real.
-
-## Tecnología
-HTML, CSS y JavaScript puro. No requiere base de datos ni servidor.
+## Identidad
+Nombre oficial: ÑandeRóga
+Eslogan: Nuestra Casa, Tu descanso
